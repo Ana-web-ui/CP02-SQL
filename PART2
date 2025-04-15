@@ -1,0 +1,841 @@
+select * from categoriacp2;
+select * from enderecocp2;
+select * from comentariocp2;
+select * from conteudocp2;
+select * from favoritoscp2;
+select * from logincp2;
+select * from perfilcp2;
+select * from tagscp2;
+select * from usuariocp2;
+select * from tipocp2;
+
+
+ALTER TABLE CATEGORIACP2 ADD (ID_TAG NUMBER);COMMIT;
+
+
+--DELETAR OS IDS QUE EU FIZ E COLOCAR A MINHA SEQUÊNCIA
+
+DELETE FROM ENDERECOCP2;
+DELETE FROM CONTEUDOCP2;
+DELETE FROM COMENTARIOCP2;
+DELETE FROM FAVORITOSCP2;
+DELETE FROM LOGINCP2;
+DELETE FROM PERFILCP2;
+DELETE FROM TAGSCP2;
+DELETE FROM USUARIOCP2;
+DELETE FROM TIPOCP2;
+DELETE FROM CATEGORIACP2;COMMIT;
+
+DELETE FROM INTEGRACAO;
+
+
+--INSERINDO A MINHA SEQUENCIA 
+
+--ENDERECO
+
+INSERT INTO ENDERECOCP2(
+ID_ENDERECO,
+BAIRRO,
+RUA,
+PAIS,
+CEP,
+CIDADE,
+ESTADO,
+NUMERO
+)VALUES (
+SQ_SYNTHETICA_SQ.NEXTVAL,
+'Neon Valley',
+'Avenida dos Hologramas',
+'Synthetica', 'NX-001',
+'Cyberpolis', 'Neo-Orion',
+101
+); COMMIT;
+
+INSERT INTO ENDERECOCP2(
+ID_ENDERECO,
+BAIRRO,
+RUA,
+PAIS,
+CEP,
+CIDADE,
+ESTADO,
+NUMERO
+)VALUES (
+SQ_SYNTHETICA_SQ.NEXTVAL,
+'Quantum Gardens',
+'Rua dos Processadores',
+'Synthetica', 'QG-442', 
+'Techlândia', 'Neutran',
+202
+); COMMIT;
+
+INSERT INTO ENDERECOCP2(
+ID_ENDERECO,
+BAIRRO,
+RUA,
+PAIS,
+CEP,
+CIDADE,
+ESTADO,
+NUMERO
+)VALUES (
+SQ_SYNTHETICA_SQ.NEXTVAL,
+'Pixel District',
+'Alameda Binária',
+'Synthetica', 'PX-778',
+'Codeville', 'Logika',
+303
+); COMMIT;
+
+INSERT INTO ENDERECOCP2(
+ID_ENDERECO,
+BAIRRO,
+RUA,
+PAIS,
+CEP,
+CIDADE,
+ESTADO,
+NUMERO
+)VALUES (
+SQ_SYNTHETICA_SQ.NEXTVAL,
+'Aurora Sector',
+'Travessa dos Circuitos',
+'Synthetica',
+'AU-908', 'Nova Zenith',
+'Cosmara',
+404
+); COMMIT;
+
+INSERT INTO ENDERECOCP2(
+ID_ENDERECO,
+BAIRRO,
+RUA,
+PAIS,
+CEP,
+CIDADE,
+ESTADO,
+NUMERO
+)VALUES (
+SQ_SYNTHETICA_SQ.NEXTVAL,
+'Silicon Hills',
+'Estrada dos Dados',
+'Synthetica', 'SH-312',
+'Chipgrad',
+'Silvaria',
+505
+); COMMIT;
+
+--USUARIO
+INSERT INTO usuariocp2 (
+    id_user,
+    nome_user,
+    idade,
+    genero_user
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Luma Vortex',
+    27,
+    'Feminino'
+);
+
+COMMIT;
+
+INSERT INTO usuariocp2 (
+    id_user,
+    nome_user,
+    idade,
+    genero_user
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Kael Orion',
+    34,
+    'Masculino'
+);
+
+COMMIT;
+
+INSERT INTO usuariocp2 (
+    id_user,
+    nome_user,
+    idade,
+    genero_user
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Zara Byte',
+    22,
+    'Feminino'
+);
+
+COMMIT;
+
+INSERT INTO usuariocp2 (
+    id_user,
+    nome_user,
+    idade,
+    genero_user
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Riven Flux',
+    30,
+    'Não-Binário'
+);
+
+COMMIT;
+
+INSERT INTO usuariocp2 (
+    id_user,
+    nome_user,
+    idade,
+    genero_user
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Nox Cypher',
+    26,
+    'Masculino'
+);
+
+COMMIT;
+
+--LOGIN
+
+INSERT INTO logincp2 (
+    id_login,
+    email,
+    senha,
+    confirmacao
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'luma.vortex@synthetica.net',
+    'Luma#2025',
+    123456
+);
+
+COMMIT;
+
+INSERT INTO logincp2 (
+    id_login,
+    email,
+    senha,
+    confirmacao
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'kael.orion@cyberpolis.io',
+    'Orion!789',
+    234567
+);
+
+COMMIT;
+
+INSERT INTO logincp2 (
+    id_login,
+    email,
+    senha,
+    confirmacao
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'zara.byte@techland.sy',
+    'Zara@321',
+    345678
+);
+
+COMMIT;
+
+INSERT INTO logincp2 (
+    id_login,
+    email,
+    senha,
+    confirmacao
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'riven.flux@circuitx.org',
+    'Flux$998',
+    456789
+);
+
+COMMIT;
+
+INSERT INTO logincp2 (
+    id_login,
+    email,
+    senha,
+    confirmacao
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'nox.cypher@datastream.sy',
+    'Nox#404',
+    567890
+);
+
+COMMIT;
+
+--PERFIL
+
+INSERT INTO perfilcp2 (
+    id_perfil,
+    tipo_perfil,
+    desc_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Administrador',
+    'Acesso total ao sistema e gerenciamento de usuários'
+);
+
+COMMIT;
+
+INSERT INTO perfilcp2 (
+    id_perfil,
+    tipo_perfil,
+    desc_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Editor',
+    'Pode publicar e editar conteúdos no portal'
+);
+
+COMMIT;
+
+INSERT INTO perfilcp2 (
+    id_perfil,
+    tipo_perfil,
+    desc_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Pesquisador',
+    'Pode criar e consultar dados para análise'
+);
+
+COMMIT;
+
+INSERT INTO perfilcp2 (
+    id_perfil,
+    tipo_perfil,
+    desc_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Leitor',
+    'Acesso apenas para leitura e comentários'
+);
+
+COMMIT;
+
+INSERT INTO perfilcp2 (
+    id_perfil,
+    tipo_perfil,
+    desc_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Convidado',
+    'Acesso restrito e temporário ao sistema'
+);
+
+COMMIT;
+
+
+--TIPO
+
+INSERT INTO tipocp2 (
+    id_tipo,
+    tipo_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Administrador'
+);
+
+COMMIT;
+
+INSERT INTO tipocp2 (
+    id_tipo,
+    tipo_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Editor'
+);
+
+COMMIT;
+
+INSERT INTO tipocp2 (
+    id_tipo,
+    tipo_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Pesquisador'
+);
+
+COMMIT;
+
+INSERT INTO tipocp2 (
+    id_tipo,
+    tipo_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Leitor'
+);
+
+COMMIT;
+
+INSERT INTO tipocp2 (
+    id_tipo,
+    tipo_perfil
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Convidado'
+);
+
+COMMIT;
+
+--CATEGORIA
+
+INSERT INTO categoriacp2 (
+    id_categoria,
+    desc_categoria,
+    nome_categoria,
+    tipo_arte,
+    tipo_ai,
+    tipo_cultura,
+    tipo_info,
+    tipo_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Categoria voltada para arte digital futurista',
+    'Arte Holográfica',
+    'Holograma',
+    NULL,
+    'Futurismo',
+    NULL,
+    NULL
+);
+
+COMMIT;
+
+INSERT INTO categoriacp2 (
+    id_categoria,
+    desc_categoria,
+    nome_categoria,
+    tipo_arte,
+    tipo_ai,
+    tipo_cultura,
+    tipo_info,
+    tipo_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Categoria com foco em IA preditiva',
+    'Inteligência Artificial',
+    NULL,
+    'IA Preditiva',
+    NULL,
+    'Big Data',
+    'Machine Learning'
+);
+
+COMMIT;
+
+INSERT INTO categoriacp2 (
+    id_categoria,
+    desc_categoria,
+    nome_categoria,
+    tipo_arte,
+    tipo_ai,
+    tipo_cultura,
+    tipo_info,
+    tipo_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Estudos sobre sociedades futuristas',
+    'Cultura Sintética',
+    NULL,
+    NULL,
+    'Sociedade Híbrida',
+    NULL,
+    'Antropologia Tecnológica'
+);
+
+COMMIT;
+
+INSERT INTO categoriacp2 (
+    id_categoria,
+    desc_categoria,
+    nome_categoria,
+    tipo_arte,
+    tipo_ai,
+    tipo_cultura,
+    tipo_info,
+    tipo_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Informações sobre avanços tecnológicos e inovação',
+    'Tecnologia Aplicada',
+    NULL,
+    'IA Generativa',
+    NULL,
+    'Inovação',
+    'Pesquisa Aplicada'
+);
+
+COMMIT;
+
+INSERT INTO categoriacp2 (
+    id_categoria,
+    desc_categoria,
+    nome_categoria,
+    tipo_arte,
+    tipo_ai,
+    tipo_cultura,
+    tipo_info,
+    tipo_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Categoria mista com enfoque em arte e IA',
+    'NeuroArte Computacional',
+    'Arte Neural',
+    'IA Criativa',
+    NULL,
+    NULL,
+    'Interdisciplinar'
+);
+
+COMMIT;
+    
+--CONTEUDO
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    SQ_SYNTHETICA_SQ.NEXTVAL,
+    'Artigo Científico',
+    'Inteligência Artificial',
+    'Predição Neural em Ambientes Urbanos',
+    'Luma Vortex',
+    sysdate
+);
+
+COMMIT;
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    SQ_SYNTHETICA_SQ.NEXTVAL,
+   'Artigo Técnico', 'Arte Holográfica',
+   'Realidade Expandida: Uma Nova Era Visual',
+   'Kael Orion',
+    sysdate
+);
+
+COMMIT;
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    SQ_SYNTHETICA_SQ.NEXTVAL,
+   'Relatório de Pesquisa',
+   'Tecnologia Aplicada',
+   'Códigos Quânticos em Ambientes Domésticos',
+   'Zara Byte',
+    sysdate
+);
+
+COMMIT;
+
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    SQ_SYNTHETICA_SQ.NEXTVAL,
+   'Publicação Cultural',
+   'Cultura Sintética',
+   'Cidades Híbridas: Conectando Tradição e Futuro',
+   'Riven Flux',
+    sysdate
+);
+
+COMMIT;
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    SQ_SYNTHETICA_SQ.NEXTVAL,
+   'Estudo Interdisciplinar',
+   'NeuroArte Computacional',
+   'IA Criativa e Expressão Artística',
+   'Nox Cypher',
+    sysdate
+);
+
+COMMIT;
+
+
+--COMENTARIO
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+    SQ_SYNTHETICA_SQ.NEXTVAL,
+    'Incrível como a IA está revolucionando a arte. Parabéns pelo conteúdo!',
+    sysdate,
+    'arte,ia'
+);
+
+COMMIT;
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+   SQ_SYNTHETICA_SQ.NEXTVAL,
+   'A pesquisa sobre cidades híbridas é essencial para o futuro urbano!',
+    sysdate,
+   'cultura,futuro'
+);
+
+COMMIT;
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+    SQ_SYNTHETICA_SQ.NEXTVAL,
+    'Gostei da análise de IA preditiva, especialmente com sensores neurais.',
+    sysdate,
+    'ia,pesquisa'
+);
+
+COMMIT;
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+    SQ_SYNTHETICA_SQ.NEXTVAL,
+    'A fusão entre arte neural e tecnologia está fascinante.',
+    sysdate,
+    'arte,neural'
+);
+
+COMMIT;
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+    SQ_SYNTHETICA_SQ.NEXTVAL,
+     'Realidade expandida pode mudar completamente como vemos o mundo.',
+    sysdate,
+    'tecnologia,arte'
+);
+
+COMMIT;
+
+--FAVORITO
+
+INSERT INTO favoritoscp2 (
+    id_fav,
+    nome_artigo,
+    data,
+    autores
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Predição Neural em Ambientes Urbanos',
+    sysdate,
+    'Luma Vortex'
+);
+
+COMMIT;
+
+INSERT INTO favoritoscp2 (
+    id_fav,
+    nome_artigo,
+    data,
+    autores
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Realidade Expandida: Uma Nova Era Visual',
+    sysdate,
+    'Kael Orion'
+);
+
+COMMIT;
+
+INSERT INTO favoritoscp2 (
+    id_fav,
+    nome_artigo,
+    data,
+    autores
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'Códigos Quânticos em Ambientes Domésticos',
+    sysdate,
+    'Zara Byte'
+);
+
+COMMIT;
+
+INSERT INTO favoritoscp2 (
+    id_fav,
+    nome_artigo,
+    data,
+    autores
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'IA Criativa e Expressão Artística',
+    sysdate,
+    'Nox Cypher'
+);
+
+COMMIT;
+--TAGS
+
+INSERT INTO tagscp2 (
+    id_tag,
+    tag_arte,
+    tag_ia,
+    tag_cultura,
+    tag_info,
+    tag_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'arte neural',
+    'inteligência preditiva',
+    NULL,
+    NULL,
+    'pesquisa urbana'
+);
+
+COMMIT;
+
+INSERT INTO tagscp2 (
+    id_tag,
+    tag_arte,
+    tag_ia,
+    tag_cultura,
+    tag_info,
+    tag_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'realidade expandida',
+    NULL,
+    NULL,
+    'inovação visual',
+    NULL
+);
+
+COMMIT;
+
+INSERT INTO tagscp2 (
+    id_tag,
+    tag_arte,
+    tag_ia,
+    tag_cultura,
+    tag_info,
+    tag_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    NULL,
+    'machine learning',
+    NULL,
+    'big data',
+    'análise de padrões'
+);
+
+COMMIT;
+
+INSERT INTO tagscp2 (
+    id_tag,
+    tag_arte,
+    tag_ia,
+    tag_cultura,
+    tag_info,
+    tag_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    NULL,
+    NULL,
+    'sociedade híbrida',
+    NULL,
+    'antropologia digital'
+);
+
+COMMIT;
+
+INSERT INTO tagscp2 (
+    id_tag,
+    tag_arte,
+    tag_ia,
+    tag_cultura,
+    tag_info,
+    tag_pesq
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'arte generativa',
+    'ia criativa',
+    NULL,
+    NULL,
+    'estudos interdisciplinares'
+);
+
+COMMIT;
+
+
+--INTEGRAÇÃO
+
+INSERT INTO INTEGRACAO(
+    ID_INTE,
+    ID_USER,
+    ID_LOGIN,
+    ID_PERFIL,
+    ID_TIPO,
+    ID_ENDERECO,
+    ID_CONTEUDO,
+    ID_CATEGORIA,
+    ID_COMENTARIO,
+    ID_FAV,
+    ID_TAG
+)VALUES (
+ SQ_SYNTHETICA_SQ.NEXTVAL, 1,6,10,15,44,25,20,30,40,35
+); COMMIT;
+
+select * from usuariocp2;
+SELECT * FROM LOGINCP2;
+select * from comentariocp2;
+select * from conteudocp2;
+select * from favoritoscp2;
+select * from categoriacp2;
+select * from tagscp2;
+SELECT * FROM ENDERECOCP2;
+SELECT * FROM PERFILCP2;
+SELECT * FROM TIPOCP2;
+SELECT * FROM ENDERECOCP2;
