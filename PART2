@@ -268,6 +268,21 @@ INSERT INTO logincp2 (
 
 COMMIT;
 
+
+
+INSERT INTO logincp2 (
+    id_login,
+    email,
+    senha,
+    confirmacao
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+    'riven.flux@circuitx.org',
+    'Flux$998',
+    456789
+);
+
+COMMIT;
 --PERFIL
 
 INSERT INTO perfilcp2 (
@@ -717,6 +732,20 @@ INSERT INTO favoritoscp2 (
 );
 
 COMMIT;
+
+INSERT INTO favoritoscp2 (
+    id_fav,
+    nome_artigo,
+    data,
+    autores
+) VALUES (
+    sq_synthetica_sq.NEXTVAL,
+  'Cidades Híbridas: Conectando Tradição e Futuro',
+    sysdate,
+    'Riven Flux'
+);
+
+COMMIT;
 --TAGS
 
 INSERT INTO tagscp2 (
@@ -814,28 +843,100 @@ COMMIT;
 
 INSERT INTO INTEGRACAO(
     ID_INTE,
-    ID_USER,
+    ID_USER1,
     ID_LOGIN,
     ID_PERFIL,
     ID_TIPO,
     ID_ENDERECO,
-    ID_CONTEUDO,
+    ID_CONTEUDO1,
     ID_CATEGORIA,
-    ID_COMENTARIO,
+    ID_COMENTARIO1,
     ID_FAV,
     ID_TAG
 )VALUES (
  SQ_SYNTHETICA_SQ.NEXTVAL, 1,6,10,15,44,25,20,30,40,35
 ); COMMIT;
 
+
+INSERT INTO INTEGRACAO(
+    ID_INTE,
+    ID_USER1,
+    ID_LOGIN,
+    ID_PERFIL,
+    ID_TIPO,
+    ID_ENDERECO,
+    ID_CONTEUDO1,
+    ID_CATEGORIA,
+    ID_COMENTARIO1,
+    ID_FAV,
+    ID_TAG
+)VALUES (
+ SQ_SYNTHETICA_SQ.NEXTVAL, 2,7,11,16,45,26,21,31,41,36
+); COMMIT;
+
+INSERT INTO INTEGRACAO(
+    ID_INTE,
+    ID_USER1,
+    ID_LOGIN,
+    ID_PERFIL,
+    ID_TIPO,
+    ID_ENDERECO,
+    ID_CONTEUDO1,
+    ID_CATEGORIA,
+    ID_COMENTARIO1,
+    ID_FAV,
+    ID_TAG
+)VALUES (
+ SQ_SYNTHETICA_SQ.NEXTVAL, 3,8,12,17,46,27,22,32,42,37
+); COMMIT;
+
+INSERT INTO INTEGRACAO(
+    ID_INTE,
+    ID_USER1,
+    ID_LOGIN,
+    ID_PERFIL,
+    ID_TIPO,
+    ID_ENDERECO,
+    ID_CONTEUDO1,
+    ID_CATEGORIA,
+    ID_COMENTARIO1,
+    ID_FAV,
+    ID_TAG
+)VALUES (
+ SQ_SYNTHETICA_SQ.NEXTVAL, 3,9,13,18,47,28,23,33,43,38
+); COMMIT;
+
+INSERT INTO INTEGRACAO(
+    ID_INTE,
+    ID_USER1,
+    ID_LOGIN,
+    ID_PERFIL,
+    ID_TIPO,
+    ID_ENDERECO,
+    ID_CONTEUDO1,
+    ID_CATEGORIA,
+    ID_COMENTARIO1,
+    ID_FAV,
+    ID_TAG
+)VALUES (
+ SQ_SYNTHETICA_SQ.NEXTVAL, 5,53,14,19,48,29,24,34,45,39
+); COMMIT;
+
+ALTER TABLE INTEGRACAO ADD (
+    ID_PERFIL NUMBER(38))
+   
+
+select * from integracao;
 select * from usuariocp2;
 SELECT * FROM LOGINCP2;
-select * from comentariocp2;
-select * from conteudocp2;
-select * from favoritoscp2;
-select * from categoriacp2;
-select * from tagscp2;
-SELECT * FROM ENDERECOCP2;
 SELECT * FROM PERFILCP2;
 SELECT * FROM TIPOCP2;
 SELECT * FROM ENDERECOCP2;
+select * from conteudocp2;
+select * from categoriacp2;
+select * from comentariocp2;
+select * from favoritoscp2;
+select * from tagscp2;
+
+
+DESC INTEGRACAO;
