@@ -77,4 +77,286 @@ FROM
 JOIN 
     TIPOCP2 T ON P.TIPO_PERFIL = T.TIPO_PERFIL;COMMIT;
 
+--COLOCANDO MAIS DADOS
+
+select * from categoriacp2;
+select * from enderecocp2;
+select * from comentariocp2;
+select * from conteudocp2;
+select * from favoritoscp2;
+select * from logincp2;
+select * from perfilcp2;
+select * from tagscp2;
+select * from usuariocp2;
+select * from tipocp2;
+
+
+ALTER TABLE CATEGORIACP2 ADD (ID_TAG NUMBER);COMMIT;
+
+
+--DELETAR OS IDS QUE EU FIZ E COLOCAR A MINHA SEQUÊNCIA
+
+DELETE FROM ENDERECOCP2;
+DELETE FROM CONTEUDOCP2;
+DELETE FROM COMENTARIOCP2;
+DELETE FROM FAVORITOSCP2;
+DELETE FROM LOGINCP2;
+DELETE FROM PERFILCP2;
+DELETE FROM TAGSCP2;
+DELETE FROM USUARIOCP2;
+DELETE FROM TIPOCP2;
+DELETE FROM CATEGORIACP2;COMMIT;
+
+DELETE FROM INTEGRACAO;
+
+
+--INSERINDO A MINHA SEQUENCIA 
+
+--USUARIO
+INSERT INTO USUARIOCP2 (ID_USER, NOME_USER, IDADE, GENERO_USER) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Luma Vortex', 27, 'Feminino'); COMMIT;
+INSERT INTO USUARIOCP2 (ID_USER, NOME_USER, IDADE, GENERO_USER) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Kael Orion', 34, 'Masculino'); COMMIT;
+INSERT INTO USUARIOCP2 (ID_USER, NOME_USER, IDADE, GENERO_USER) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Zara Byte', 22, 'Feminino'); COMMIT;
+INSERT INTO USUARIOCP2 (ID_USER, NOME_USER, IDADE, GENERO_USER) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Riven Flux', 30, 'Não-Binário'); COMMIT;
+INSERT INTO USUARIOCP2 (ID_USER, NOME_USER, IDADE, GENERO_USER) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Nox Cypher', 26, 'Masculino'); COMMIT;
+
+--LOGIN
+
+INSERT INTO LOGINCP2 (ID_LOGIN, EMAIL, SENHA, CONFIRMACAO) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL,'luma.vortex@synthetica.net', 'Luma#2025', 123456);COMMIT;
+INSERT INTO LOGINCP2 (ID_LOGIN, EMAIL, SENHA, CONFIRMACAO) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'kael.orion@cyberpolis.io', 'Orion!789', 234567);COMMIT;
+INSERT INTO LOGINCP2 (ID_LOGIN, EMAIL, SENHA, CONFIRMACAO) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'zara.byte@techland.sy', 'Zara@321', 345678);COMMIT;
+INSERT INTO LOGINCP2 (ID_LOGIN, EMAIL, SENHA, CONFIRMACAO) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'riven.flux@circuitx.org', 'Flux$998', 456789);COMMIT;
+INSERT INTO LOGINCP2 (ID_LOGIN, EMAIL, SENHA, CONFIRMACAO) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL,  'nox.cypher@datastream.sy', 'Nox#404', 567890);COMMIT;
+
+--PERFIL
+
+INSERT INTO PERFILCP2 (ID_PERFIL, TIPO_PERFIL, DESC_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Administrador', 'Acesso total ao sistema e gerenciamento de usuários'); COMMIT;
+INSERT INTO PERFILCP2 (ID_PERFIL, TIPO_PERFIL, DESC_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL,  'Editor', 'Pode publicar e editar conteúdos no portal'); COMMIT;
+INSERT INTO PERFILCP2 (ID_PERFIL, TIPO_PERFIL, DESC_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Pesquisador', 'Pode criar e consultar dados para análise'); COMMIT;
+INSERT INTO PERFILCP2 (ID_PERFIL, TIPO_PERFIL, DESC_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Leitor', 'Acesso apenas para leitura e comentários'); COMMIT;
+INSERT INTO PERFILCP2 (ID_PERFIL, TIPO_PERFIL, DESC_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL,'Convidado', 'Acesso restrito e temporário ao sistema'); COMMIT; 
+
+
+--TIPO
+
+INSERT INTO TIPOCP2 (ID_TIPO, TIPO_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Administrador'); COMMIT;
+INSERT INTO TIPOCP2 (ID_TIPO, TIPO_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Editor'); COMMIT;
+INSERT INTO TIPOCP2 (ID_TIPO, TIPO_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Pesquisador'); COMMIT;
+INSERT INTO TIPOCP2 (ID_TIPO, TIPO_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Leitor'); COMMIT;
+INSERT INTO TIPOCP2 (ID_TIPO, TIPO_PERFIL) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Convidado'); COMMIT;
+
+--CATEGORIA
+
+INSERT INTO CATEGORIACP2 (ID_CATEGORIA, DESC_CATEGORIA, NOME_CATEGORIA, TIPO_ARTE, TIPO_AI, TIPO_CULTURA, TIPO_INFO, TIPO_PESQ) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL, 'Categoria voltada para arte digital futurista', 'Arte Holográfica',
+    'Holograma', NULL, 'Futurismo', NULL, NULL);COMMIT;
+    
+INSERT INTO CATEGORIACP2 (ID_CATEGORIA, DESC_CATEGORIA, NOME_CATEGORIA, TIPO_ARTE, TIPO_AI, TIPO_CULTURA, TIPO_INFO, TIPO_PESQ) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL,'Categoria com foco em IA preditiva', 'Inteligência Artificial',
+    NULL, 'IA Preditiva', NULL, 'Big Data', 'Machine Learning');COMMIT;
+    
+INSERT INTO CATEGORIACP2 (ID_CATEGORIA, DESC_CATEGORIA, NOME_CATEGORIA, TIPO_ARTE, TIPO_AI, TIPO_CULTURA, TIPO_INFO, TIPO_PESQ) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL,'Estudos sobre sociedades futuristas', 'Cultura Sintética',
+    NULL, NULL, 'Sociedade Híbrida', NULL, 'Antropologia Tecnológica');COMMIT;
+
+INSERT INTO CATEGORIACP2 (ID_CATEGORIA, DESC_CATEGORIA, NOME_CATEGORIA, TIPO_ARTE, TIPO_AI, TIPO_CULTURA, TIPO_INFO, TIPO_PESQ) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL,'Informações sobre avanços tecnológicos e inovação', 'Tecnologia Aplicada',
+    NULL, 'IA Generativa', NULL, 'Inovação', 'Pesquisa Aplicada');COMMIT;
+
+INSERT INTO CATEGORIACP2 (ID_CATEGORIA, DESC_CATEGORIA, NOME_CATEGORIA, TIPO_ARTE, TIPO_AI, TIPO_CULTURA, TIPO_INFO, TIPO_PESQ) VALUES (SQ_SYNTHETICA_SQ.NEXTVAL,'Categoria mista com enfoque em arte e IA', 'NeuroArte Computacional',
+    'Arte Neural', 'IA Criativa', NULL, NULL, 'Interdisciplinar');COMMIT;
+    
+--CONTEUDO
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    sq_synthetica_sq.nextal,
+    'Artigo Científico',
+    'Inteligência Artificial',
+    'Predição Neural em Ambientes Urbanos',
+    'Luma Vortex',
+    sysdate
+);
+
+COMMIT;
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    sq_synthetica_sq.nextal,
+   'Artigo Técnico', 'Arte Holográfica',
+   'Realidade Expandida: Uma Nova Era Visual',
+   'Kael Orion',
+    sysdate
+);
+
+COMMIT;
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    sq_synthetica_sq.nextal,
+   'Relatório de Pesquisa',
+   'Tecnologia Aplicada',
+   'Códigos Quânticos em Ambientes Domésticos',
+   'Zara Byte',
+    sysdate
+);
+
+COMMIT;
+
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    sq_synthetica_sq.nextal,
+   'Publicação Cultural',
+   'Cultura Sintética',
+   'Cidades Híbridas: Conectando Tradição e Futuro',
+   'Riven Flux',
+    sysdate
+);
+
+COMMIT;
+
+INSERT INTO conteudocp2 (
+    id_conteudo,
+    tipo_artigo,
+    categoria,
+    titulo,
+    autores,
+    data_da_publi
+) VALUES (
+    sq_synthetica_sq.nextal,
+   'Estudo Interdisciplinar',
+   'NeuroArte Computacional',
+   'IA Criativa e Expressão Artística',
+   'Nox Cypher',
+    sysdate
+);
+
+COMMIT;
+
+
+--COMENTARIO
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+    sq_synthetica_sq,
+    'Incrível como a IA está revolucionando a arte. Parabéns pelo conteúdo!',
+    sysdate,
+    'arte,ia'
+);
+
+COMMIT;
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+    sq_synthetica_sq,
+   'A pesquisa sobre cidades híbridas é essencial para o futuro urbano!',
+    sysdate,
+   'cultura,futuro'
+);
+
+COMMIT;
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+    sq_synthetica_sq,
+    'Gostei da análise de IA preditiva, especialmente com sensores neurais.',
+    sysdate,
+    'ia,pesquisa'
+);
+
+COMMIT;
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+    sq_synthetica_sq,
+    'A fusão entre arte neural e tecnologia está fascinante.',
+    sysdate,
+    'arte,neural'
+);
+
+COMMIT;
+
+INSERT INTO comentariocp2 (
+    id_comentario,
+    user_comentario,
+    data_comentario,
+    tags
+) VALUES (
+    sq_synthetica_sq,
+     'Realidade expandida pode mudar completamente como vemos o mundo.',
+    sysdate,
+    'tecnologia,arte'
+);
+
+COMMIT;
+
+--FAVORITO
+
+INSERT INTO FAVORITOCP2 (
+ID_FAV, NOME_ARTIGO, DATA, AUTORES) VALUES (SQ_SYNTHETICA_SQ, 'Predição Neural em Ambientes Urbanos', SYSDATE,'Luma Vortex'); COMMIT; 
+
+
+INSERT INTO FAVORITOCP2 (
+ID_FAV, NOME_ARTIGO, DATA, AUTORES) VALUES (SQ_SYNTHETICA_SQ, 'Realidade Expandida: Uma Nova Era Visual', SYSDATE,'Kael Orion'); COMMIT;
+
+INSERT INTO FAVORITOCP2 (
+ID_FAV, NOME_ARTIGO, DATA, AUTORES) VALUES (SQ_SYNTHETICA_SQ, 'Códigos Quânticos em Ambientes Domésticos', SYSDATE,'Zara Byte'); COMMIT;
+
+INSERT INTO FAVORITOCP2 (
+ID_FAV, NOME_ARTIGO, DATA, AUTORES) VALUES (SQ_SYNTHETICA_SQ, 'IA Criativa e Expressão Artística', SYSDATE,'Nox Cypher'); COMMIT;
+
+--TAGS
+
+INSERT INTO TAGSCP2 (
+ID_TAG, TAG_ARTE, TAG_AI, TAG_CULTURA, TAG_INFO, TAG_PESQ) VALUES (SQ_SYNTHETICA_SQ, 'arte neural', 'inteligência preditiva', NULL, NULL, 'pesquisa urbana');COMMIT;
+
+INSERT INTO TAGSCP2 (
+ID_TAG, TAG_ARTE, TAG_AI, TAG_CULTURA, TAG_INFO, TAG_PESQ) VALUES (SQ_SYNTHETICA_SQ,'realidade expandida', NULL, NULL, 'inovação visual', NULL);COMMIT;
+
+INSERT INTO TAGSCP2 (
+ID_TAG, TAG_ARTE, TAG_AI, TAG_CULTURA, TAG_INFO, TAG_PESQ) VALUES (SQ_SYNTHETICA_SQ, NULL, 'machine learning', NULL, 'big data', 'análise de padrões');COMMIT;
+
+INSERT INTO TAGSCP2 (
+ID_TAG, TAG_ARTE, TAG_AI, TAG_CULTURA, TAG_INFO, TAG_PESQ) VALUES (SQ_SYNTHETICA_SQ, NULL, NULL, 'sociedade híbrida', NULL, 'antropologia digital');COMMIT;
+
+INSERT INTO TAGSCP2 (
+ID_TAG, TAG_ARTE, TAG_AI, TAG_CULTURA, TAG_INFO, TAG_PESQ) VALUES (SQ_SYNTHETICA_SQ,'arte generativa', 'ia criativa', NULL, NULL, 'estudos interdisciplinares');COMMIT;
+
+
 
