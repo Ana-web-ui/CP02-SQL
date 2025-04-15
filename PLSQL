@@ -358,5 +358,23 @@ ID_TAG, TAG_ARTE, TAG_AI, TAG_CULTURA, TAG_INFO, TAG_PESQ) VALUES (SQ_SYNTHETICA
 INSERT INTO TAGSCP2 (
 ID_TAG, TAG_ARTE, TAG_AI, TAG_CULTURA, TAG_INFO, TAG_PESQ) VALUES (SQ_SYNTHETICA_SQ,'arte generativa', 'ia criativa', NULL, NULL, 'estudos interdisciplinares');COMMIT;
 
+--INTEGRAÇÃO
+
+INSERT INTO INTEGRACAO(
+ID_INTE,
+ID_USER,
+ID_COMENTARIO,
+ID_CONTEUDO,
+ID_FAV,
+ID_CATEGORIA,
+ID_TAG
+)VALUES (
+ SQ_SYNTHETICA_SQ. NEXTVAL, 1,1,
+)
+
+select * from usuariocp2;
+select * from comentariocp2;
+select * from conteudocp2;
+
 
 
